@@ -2,189 +2,157 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation">
-  <meta name="keywords" content="Robotic Manipulation, Structural Representation, Model-based Planning, Foundation Models">
+  <meta name="description" content="FSAG: Enhancing Human-to-Dexterous-Hand Finger-Specific Affordance Grounding via Diffusion Models">
+  <meta name="keywords" content="Robotic Manipulation, Dexterous Grasping, Diffusion Models, Affordance Grounding">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FSAG</title>
+  <title>FSAG: Finger-Specific Affordance Grounding</title>
 
-  <!-- Thumbnail for social media sharing -->
   <meta property="og:image" content="media/logo.png">
 
-  <!-- Favicon -->
-  <link rel="icon" href="media/logo.png" type="image/jpeg">
+  <link rel="icon" href="media/logo.png" type="image/png">
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-  </script>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
-  <script>
-    function updateInTheWild() {
-      var task = document.getElementById("inthewild-video-menu").value;
-
-      console.log("updateInTheWild", task)
-
-      var video = document.getElementById("inthewild-video");
-      video.src = "media/videos/" + 
-                  task + 
-                  ".m4v"
-      video.play();
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
     }
-
-    function updateBimanual() {
-      var task = document.getElementById("bimanual-video-menu").value;
-
-      console.log("updateBimanual", task)
-
-      var video = document.getElementById("bimanual-video");
-      video.src = "media/videos/" + 
-                  task + 
-                  ".m4v"
-      video.play();
+    .publication-title {
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 600;
     }
-
-    function updateClothes() {
-      var task = document.getElementById("clothes-video-menu").value;
-
-      console.log("updateclothes", task)
-
-      var img = document.getElementById("clothes-img");
-      img.src = "media/fold-strategies/" + 
-                  task + 
-                  ".jpeg"
-
-      var video = document.getElementById("clothes-video");
-      video.src = "media/videos/fold-" + 
-                  task + 
-                  ".mp4"
-      video.play();
+    .hero.is-light {
+      background-color: #fafafa;
     }
-  </script>
+    .button-container .button {
+      margin: 0.5rem;
+      transition: all 0.2s ease-in-out;
+    }
+    .button-container .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .method-image {
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+    figcaption {
+      font-style: italic;
+      color: #555;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .section {
+      padding: 4rem 1.5rem;
+    }
+    .footer {
+      padding: 3rem 1.5rem;
+    }
+  </style>
 
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-
-  <link rel="stylesheet" href="./static/source_serif_4.css">
-  <link rel="stylesheet" href="./static/source_sans_3.css">  
-  <link rel="stylesheet" href="./static/academicons.min.css">
-  <link rel="stylesheet" href="./static/fontawesome/css/fontawesome.css">
-  <link rel="stylesheet" href="./static/fontawesome/css/brands.css">
-  <link rel="stylesheet" href="./static/fontawesome/css/light.css">
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
 </head>
-<body onload="updateInTheWild();updateBimanual();">
+<body>
 
-<section class="hero">
+<section class="hero is-medium is-light">
   <div class="hero-body">
-    <div class="container is-fullhd">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">FSAG: Enhancing Human-to-Dexterous-Hand Finger-Specific<br>Affordance Grounding via Diffusion Models</h1>
-          <br>
-          <div class="button-container">
-            <a href="/" target="_blank" class="button"><i class="fa-light fa-file"></i>&emsp14;PDF</a>
-            <a href="/" target="_blank" class="button"><i class="fa-light fa-film"></i>&emsp14;Video</a>
-            <a href="/" target="_blank" class="button"><i class="fa-light fa-code"></i>&emsp14;Code</a>
-        </div>
-        </div>
+    <div class="container has-text-centered">
+      <h1 class="title is-1 publication-title">
+        FSAG: Enhancing Human-to-Dexterous-Hand Finger-Specific Affordance Grounding via Diffusion Models
+      </h1>
+      <br>
+      <div class="button-container">
+        <a href="/" target="_blank" class="button is-primary">
+          <span class="icon"><i class="fa-solid fa-file-pdf"></i></span>
+          <span>PDF</span>
+        </a>
+        <a href="/" target="_blank" class="button is-link">
+          <span class="icon"><i class="fa-solid fa-film"></i></span>
+          <span>Video</span>
+        </a>
+        <a href="/" target="_blank" class="button is-dark">
+          <span class="icon"><i class="fa-brands fa-github"></i></span>
+          <span>Code</span>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="hero teaser">
-  <!-- <div class="container is-max-widescreen">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-vcentered  is-centered">
-          <video id="teaser" autoplay muted loop controls height="100%" width="100%">
-            <source src="media/videos/teaser.mp4"
-                    type="video/mp4">
-          </video>
-          </br>
-        </div>
-        <br>
-        <h2 class="subtitle has-text-centered">
-        Large vision models and vision-language models can generate keypoint-based constraints, which can be optimized to achieve multi-stage, in-the-wild, bimanual, and reactive behaviors, without task-specific training or environment models.
-        </h2>
-      </div>
-    </div>
-  </div> -->
-
-
-<div class="container is-max-widescreen">
-<div class="columns is-centered has-text-centered">
-  <img src="media/logo.png" class="method-image" />
-</div>
-</div>
-
-<div class="container is-max-widescreen">
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Abstract</h2>
-    <div class="content has-text-justified">
-      <p>
-        Dexterous grasp synthesis remains a central challenge: the high dimensionality and kinematic diversity of multi-fingered hands prevent direct transfer of algorithms developed for parallel-jaw grippers. Existing approaches typically depend on large, hardware-specific grasp datasets collected in simulation or through costly real-world trials, hindering scalability as new dexterous hand designs emerge. To this end, we propose a data-efficient framework, which is designed to bypass robot grasp data collection by exploiting the rich, object-centric semantic priors latent in pretrained generative diffusion models. Temporally aligned and fine-grained grasp affordances are extracted from raw human video demonstrations and fused with 3D scene geometry from depth images to infer semantically grounded contact contact targets. A kinematics-aware retargeting module then maps these affordance representations to diverse dexterous hands without per-hand retraining. The resulting system produces stable, functionally appropriate multi-contact grasps with a 90\% real-world success rate, while exhibiting strong generalization across previously unseen object instances within a category, pose variations, and multiple hand embodiments. This work (i) introduces a semantic affordance extraction pipeline leveraging vision–language generative priors for dexterous grasping, (ii) demonstrates cross-hand generalization without constructing hardware-specific grasp datasets, and (iii) establishes that a single depth modality suffices for high-performance grasp synthesis when coupled with foundation-model semantics. Our results highlight a path toward scalable, hardware-agnostic dexterous manipulation driven by human demonstrations and pretrained generative models.
-      </p>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- <hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">Walkthrough Video</h2>
-  <div class="publication-video">
-      <iframe src="https://www.youtube.com/embed/2S8YhBdLdww" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div> -->
-
-
-<hr class="rounded">
-<div class="rows">
-  <h2 class="title is-3">Overview of FSAG</h2>
-  <img src="media/figures/pipeline.png" class="method-image" />
-  <p class="content has-text-justified">(1) Hyperfeature extraction: A frozen text-to-image diffusion U-Net encodes the object image (optionally text-conditioned; multi-timestep, multi-scale activations are aggregated into hyperfeatures $A_g$.
-(2) Finger-specific affordance grounding: An FPN-style decoder maps $A_g$ to five per-finger likelihood maps $\hat{H}$ supervised by fingertip labels from human demonstrations.
-(3) Manipulation: Stereo-depth reconstruction and language-guided segmentation yield a partial object point cloud; maxima of $\hat{H}$ are lifted to 3D, local normals define approach/closure/hold waypoints, and a damped least-squares QP tracks them under joint and collision constraints to execute dexterous grasps transferable across hand embodiments.</b>
-  </p>
-</div>
-
-</section>
-</div>
-
-<footer class="footer">
+<section class="section">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column">
-        <div class="content has-text-centered">
+      <div class="column is-four-fifths">
+        <figure>
+          <img src="media/logo.png" alt="FSAG Method Teaser Image" class="method-image" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section is-light">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="content is-medium">
           <p>
-            Website template borrowed from <a href="https://nerfies.github.io">Nerfies</a>,
-            <a href="https://dex-cap.github.io">DexCap</a>,
-            and <a href="https://transic-robot.github.io">TRANSIC</a>. 
+            Dexterous grasp synthesis remains a central challenge: the high dimensionality and kinematic diversity of multi-fingered hands prevent direct transfer of algorithms developed for parallel-jaw grippers. Existing approaches typically depend on large, hardware-specific grasp datasets collected in simulation or through costly real-world trials, hindering scalability as new dexterous hand designs emerge. To this end, we propose a data-efficient framework, which is designed to bypass robot grasp data collection by exploiting the rich, object-centric semantic priors latent in pretrained generative diffusion models. Temporally aligned and fine-grained grasp affordances are extracted from raw human video demonstrations and fused with 3D scene geometry from depth images to infer semantically grounded contact contact targets. A kinematics-aware retargeting module then maps these affordance representations to diverse dexterous hands without per-hand retraining. The resulting system produces stable, functionally appropriate multi-contact grasps with a 90% real-world success rate, while exhibiting strong generalization across previously unseen object instances within a category, pose variations, and multiple hand embodiments. This work (i) introduces a semantic affordance extraction pipeline leveraging vision–language generative priors for dexterous grasping, (ii) demonstrates cross-hand generalization without constructing hardware-specific grasp datasets, and (iii) establishes that a single depth modality suffices for high-performance grasp synthesis when coupled with foundation-model semantics. Our results highlight a path toward scalable, hardware-agnostic dexterous manipulation driven by human demonstrations and pretrained generative models.
           </p>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">Overview of FSAG</h2>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <figure>
+              <img src="media/figures/pipeline.png" alt="FSAG Pipeline Diagram" class="method-image" />
+              <figcaption class="content">
+                <b>(1) Hyperfeature extraction:</b> A frozen text-to-image diffusion U-Net encodes the object image, and multi-scale activations are aggregated into hyperfeatures $A_g$.
+                <b>(2) Finger-specific affordance grounding:</b> An FPN-style decoder maps $A_g$ to five per-finger likelihood maps $\hat{H}$ supervised by fingertip labels from human demonstrations.
+                <b>(3) Manipulation:</b> A partial object point cloud is generated; maxima of $\hat{H}$ are lifted to 3D to define waypoints, and a QP tracks them to execute dexterous grasps transferable across hand embodiments.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Website template inspired by <a href="https://nerfies.github.io" target="_blank">Nerfies</a>,
+        <a href="https://dex-cap.github.io" target="_blank">DexCap</a>,
+        and <a href="https://transic-robot.github.io" target="_blank">TRANSIC</a>.
+      </p>
+    </div>
+  </div>
 </footer>
 
+<script>
+    // Your existing JS functions can remain here if needed for other pages/sections.
+    // Since the dropdowns were removed in this layout, these functions are not currently used.
+    function updateInTheWild() { /* ... */ }
+    function updateBimanual() { /* ... */ }
+    function updateClothes() { /* ... */ }
+</script>
 
 </body>
 </html>
